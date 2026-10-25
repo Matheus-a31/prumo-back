@@ -12,13 +12,13 @@ import java.io.IOException;
 @Service
 public class EmailService {
 
-    @Value("${kairos.sendgrid.api-key:}")
+    @Value("${prumo.sendgrid.api-key:}")
     private String sendGridApiKey;
 
-    @Value("${kairos.sendgrid.from-email:noreply@kairos.app}")
+    @Value("${prumo.sendgrid.from-email:noreply@prumo.app}")
     private String fromEmail;
 
-    @Value("${kairos.sendgrid.from-name:Kairos}")
+    @Value("${prumo.sendgrid.from-name:Prumo}")
     private String fromName;
 
     public void sendInvitationEmail(String toEmail, String projectName, String inviteLink) {
@@ -39,11 +39,11 @@ public class EmailService {
         String htmlBody = """
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <div style="background: linear-gradient(135deg, #6366F1, #8B5CF6); padding: 32px; border-radius: 12px 12px 0 0;">
-                <h1 style="color: white; margin: 0; font-size: 24px;">Kairos</h1>
+                <h1 style="color: white; margin: 0; font-size: 24px;">Prumo</h1>
               </div>
               <div style="background: #F8FAFC; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #E2E8F0;">
                 <h2 style="color: #1E293B;">Você foi convidado! 🎉</h2>
-                <p style="color: #475569;">Você recebeu um convite para participar do projeto <strong>%s</strong> no Kairos.</p>
+                <p style="color: #475569;">Você recebeu um convite para participar do projeto <strong>%s</strong> no Prumo.</p>
                 <a href="%s" style="display: inline-block; background: #6366F1; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 16px 0;">
                   Aceitar Convite
                 </a>
